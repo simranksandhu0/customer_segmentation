@@ -77,17 +77,9 @@ Each segment received specific recommendations for campaign type, messaging tone
 ## File Structure
 
 ```
-customer-segmentation/
-├── data/
-│   └── sample_transactions.csv     # Anonymised sample data
-├── notebooks/
-│   ├── 01_eda.ipynb                # Exploratory analysis
-│   ├── 02_feature_engineering.ipynb
-│   └── 03_clustering.ipynb         # K-Means + segment profiling
-├── outputs/
-│   ├── segment_profiles.csv        # Centroid values per segment
-│   └── targeting_recommendations.md
-├── requirements.txt
+customer_segmentation/
+├── generate_data.py    # Generates synthetic customer transaction data
+├── clustering.py       # RFM feature engineering, K-Means clustering, segment profiling
 └── README.md
 ```
 
@@ -95,14 +87,16 @@ customer-segmentation/
 
 ## How to Run
 
-```bash
-git clone https://github.com/your-username/customer-segmentation.git
-cd customer-segmentation
+```
+# Clone the repo
+git clone https://github.com/simranksandhu0/customer_segmentation.git
+cd customer_segmentation
 
-pip install -r requirements.txt
+# Generate synthetic data
+python generate_data.py
 
-# Start with EDA, then run notebooks in order
-jupyter notebook notebooks/01_eda.ipynb
+# Run clustering analysis
+python clustering.py
 ```
 
 ---
